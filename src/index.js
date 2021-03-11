@@ -1,21 +1,12 @@
 module.exports = function reverse (n) {
 
-  if (n > 0) {
-    let strNum = String(n);
-    let result = '';
+    let str = n;
 
-    for (let i = strNum.length; i >= 0; i-- ) {
-    result = result + strNum.charAt(i);
-    }
-    return result;
-  } else {
-    n = -n;
-    let strNum = String(n);
-    let result = '';
-
-    for (let i = strNum.length; i >= 0; i-- ) {
-        result = result + strNum.charAt(i);
-    }
-    return result;
-  }
-}
+    if (n > 0) {
+        str = n + '';
+        return +str.split('').reverse().join('');
+    } else {
+        str = -n + '';
+        return +str.split('').reverse().join('');
+    };
+};
